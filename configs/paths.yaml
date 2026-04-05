@@ -1,0 +1,14 @@
+data:
+  raw: data/raw/airbnb.csv
+  interim: data/interim/data.csv
+  processed: data/processed/data.csv
+
+artifacts:
+  model_path: artifacts/models/model.pkl
+  preprocessor_path: artifacts/models/preprocessor.pkl
+
+reports:
+  validation_report: artifacts/reports/validation_report.json
+
+logs:
+  log_dir: logs/

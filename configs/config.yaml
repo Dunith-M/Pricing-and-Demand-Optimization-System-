@@ -1,0 +1,39 @@
+data_ingestion:
+  raw_data_path: data/raw/airbnb.csv
+
+data_transformation:
+  test_size: 0.2
+  random_state: 42
+  target_column: price
+
+features:
+
+  numerical_columns:
+    - lat
+    - long
+    - price
+    - service_fee
+    - minimum_nights
+    - number_of_reviews
+    - reviews_per_month
+    - review_rate_number
+    - calculated_host_listings_count
+    - availability_365
+
+  categorical_columns:
+    - host_identity_verified
+    - neighbourhood_group
+    - neighbourhood
+    - country
+    - cancellation_policy
+    - room_type
+
+  boolean_columns:
+    - instant_bookable
+
+  datetime_columns:
+    - last_review
+
+drop_columns:
+  - id
+  - host_id

@@ -1,0 +1,6 @@
+2026-04-05 11:03:35,831 | INFO | dynamic_pricing | ===== PROJECT STARTED =====
+2026-04-05 11:03:35,831 | INFO | dynamic_pricing | Stage: Data Loading START
+2026-04-05 11:03:35,832 | INFO | dynamic_pricing | Dataset shape: (1000, 15)
+2026-04-05 11:03:35,832 | INFO | dynamic_pricing | Missing values: 120
+2026-04-05 11:03:35,833 | INFO | dynamic_pricing | Stage: Data Loading END
+2026-04-05 11:03:35,833 | INFO | dynamic_pricing | ===== PROJECT FINISHED =====

@@ -1,0 +1,11 @@
+model_trainer:
+  model_name: random_forest
+
+  random_forest:
+    n_estimators: 200
+    max_depth: 15
+    min_samples_split: 5
+    random_state: 42
+
+  linear_regression:
+    fit_intercept: true
