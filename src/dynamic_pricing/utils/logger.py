@@ -1,36 +1,34 @@
 import logging
 import os
-from datetime import datetime
 
 
 def setup_logger(name: str = "dynamic_pricing") -> logging.Logger:
     """
-    Centralized logger setup
+    Centralized logger (file + console)
     """
 
-    if not os.path.exists("logs"):
-        os.makedirs("logs")
+    os.makedirs("logs", exist_ok=True)
 
-    log_file = f"logs/{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.log"
+    log_file = "logs/project.log"
 
     logger = logging.getLogger(name)
     logger.setLevel(logging.INFO)
 
-    # Avoid duplicate logs
+    # prevent duplicate logs
     if logger.hasHandlers():
         logger.handlers.clear()
 
-    # File handler
+    # file handler
     file_handler = logging.FileHandler(log_file)
     file_handler.setLevel(logging.INFO)
 
-    # Console handler
+    # console handler
     console_handler = logging.StreamHandler()
     console_handler.setLevel(logging.INFO)
 
-    # Format
+    # format
     formatter = logging.Formatter(
-        "%(asctime)s | %(levelname)s | %(name)s | %(message)s"
+        "%(asctime)s | %(levelname)s | %(message)s"
     )
 
     file_handler.setFormatter(formatter)
