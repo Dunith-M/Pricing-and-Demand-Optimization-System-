@@ -1,0 +1,95 @@
+# =========================
+# 1. Python
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+.venv/
+ENV/
+
+# =========================
+# 2. Jupyter (optional)
+# =========================
+.ipynb_checkpoints/
+
+# =========================
+# 3. Environment variables
+# =========================
+.env
+.env.*
+*.env
+
+# =========================
+# 4. Logs
+# =========================
+logs/
+*.log
+
+# =========================
+# 5. Data (CRITICAL)
+# =========================
+data/raw/
+data/interim/
+data/processed/
+
+# BUT keep folder structure
+!data/raw/.gitkeep
+!data/interim/.gitkeep
+!data/processed/.gitkeep
+
+# =========================
+# 6. Artifacts (ML outputs)
+# =========================
+artifacts/
+*.pkl
+*.joblib
+*.npy
+
+# =========================
+# 7. MLflow
+# =========================
+mlruns/
+mlartifacts/
+
+# =========================
+# 8. Streamlit
+# =========================
+.streamlit/secrets.toml
+
+# =========================
+# 9. OS / Editor junk
+# =========================
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# =========================
+# 10. Build / Packaging
+# =========================
+build/
+dist/
+*.egg-info/
+
+# =========================
+# 11. Docker (optional)
+# =========================
+*.tar
+*.gz
+
+# =========================
+# 12. Testing / coverage
+# =========================
+.pytest_cache/
+.coverage
+htmlcov/
+
+# =========================
+# 13. Temporary files
+# =========================
+*.tmp
+*.swp
