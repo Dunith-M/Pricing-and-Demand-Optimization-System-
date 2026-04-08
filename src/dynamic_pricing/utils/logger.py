@@ -38,3 +38,10 @@ def setup_logger(name: str = "dynamic_pricing") -> logging.Logger:
     logger.addHandler(console_handler)
 
     return logger
+
+
+def get_logger(name: str = "dynamic_pricing") -> logging.Logger:
+    """
+    Backward-compatible alias used by older components.
+    """
+    return setup_logger(name)
