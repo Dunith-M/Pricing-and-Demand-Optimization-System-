@@ -38,3 +38,8 @@
 2026-04-08 16:20:36,170 | INFO | Dataset shape: (98970, 29)
 2026-04-08 16:20:36,171 | INFO | Target mean: 0.1407
 2026-04-08 16:20:36,208 | INFO | Saved target arrays successfully
+2026-04-08 16:42:26,332 | INFO | Starting target definition pipeline...
+2026-04-08 16:42:26,332 | INFO | Creating demand_score...
+2026-04-08 16:42:26,343 | INFO | Dataset shape: (98970, 29)
+2026-04-08 16:42:26,343 | INFO | Target mean: 0.1407
+2026-04-08 16:42:26,403 | INFO | Saved target arrays successfully

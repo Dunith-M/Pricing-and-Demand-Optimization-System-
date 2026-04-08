@@ -115,6 +115,16 @@ class PreprocessingPipeline:
         X_train_transformed = pipeline.fit_transform(X_train)
         X_test_transformed = pipeline.transform(X_test)
 
+        if hasattr(X_train_transformed, "toarray"):
+            X_train_transformed = X_train_transformed.toarray()
+        else:
+            X_train_transformed = np.asarray(X_train_transformed)
+
+        if hasattr(X_test_transformed, "toarray"):
+            X_test_transformed = X_test_transformed.toarray()
+        else:
+            X_test_transformed = np.asarray(X_test_transformed)
+
         os.makedirs("artifacts/preprocessing", exist_ok=True)
         joblib.dump(pipeline, "artifacts/preprocessing/preprocessor.pkl")
 
