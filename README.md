@@ -1,8 +1,8 @@
-Here’s a **complete, industry-grade README.md** tailored to your **Airbnb Dynamic Pricing & Demand Optimization System**. This is not generic — it reflects your actual pipeline (ML + OR + Streamlit + MLflow).
+Here’s a **complete, industry-grade README.md** tailored to your **Airbnb Pricing & Demand Optimization System**. This is not generic — it reflects your actual pipeline (ML + OR + Streamlit + MLflow).
 
 ---
 
-# 📊 Airbnb Dynamic Pricing & Demand Optimization System
+# 📊 Airbnb Pricing & Demand Optimization System
 
 ## 🚀 Overview
 
@@ -314,7 +314,6 @@ mlflow ui
 * Add **competitor pricing data**
 * Integrate **real-time demand signals**
 * Use **OR-Tools for constrained optimization**
-* Add **A/B testing for validation**
 * Deploy as API (FastAPI)
 
 ---
