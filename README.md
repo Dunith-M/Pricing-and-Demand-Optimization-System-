@@ -113,7 +113,13 @@ airbnb_price/
 │   │   ├── preprocessing_pipeline.py
 │   │   ├── training_pipeline.py
 │   │   └── inference_pipeline.py
-│
+│   |
+|   |── Optimization/
+|   |    |──constraints.py
+|   |    |──demand_simulator.py
+|   |    |──optimizer.py
+|   |    |──target_definition.py
+|   |
 │   ├── utils/
 │   │   ├── common.py
 │   │   ├── logger.py
