@@ -43,3 +43,27 @@
 2026-04-08 16:42:26,343 | INFO | Dataset shape: (98970, 29)
 2026-04-08 16:42:26,343 | INFO | Target mean: 0.1407
 2026-04-08 16:42:26,403 | INFO | Saved target arrays successfully
+2026-04-11 11:12:34,038 | INFO | ================================================================================
+2026-04-11 11:12:34,039 | INFO | PRICE RECOMMENDATION PIPELINE STARTED
+2026-04-11 11:12:34,039 | INFO | ================================================================================
+2026-04-11 11:13:03,534 | INFO | ================================================================================
+2026-04-11 11:13:03,534 | INFO | PRICE RECOMMENDATION PIPELINE STARTED
+2026-04-11 11:13:03,534 | INFO | ================================================================================
+2026-04-11 11:13:33,835 | INFO | ================================================================================
+2026-04-11 11:13:33,835 | INFO | PRICE RECOMMENDATION PIPELINE STARTED
+2026-04-11 11:13:33,835 | INFO | ================================================================================
+2026-04-11 11:17:01,488 | INFO | ================================================================================
+2026-04-11 11:17:01,489 | INFO | PRICE RECOMMENDATION PIPELINE STARTED
+2026-04-11 11:17:01,489 | INFO | ================================================================================
+2026-04-11 17:33:21,715 | INFO | Demand simulation completed. Shape: (1484550, 7)
+2026-04-11 17:37:14,490 | INFO | Optimization completed. Shape: (98458, 11)
+2026-04-11 17:37:14,490 | INFO | Building business-ready recommendation output.
+2026-04-11 17:37:17,595 | INFO | Recommendation output built successfully. Shape: (98458, 12)
+2026-04-11 17:37:17,597 | INFO | Building optimization summary.
+2026-04-11 17:37:17,628 | INFO | Summary built successfully.
+2026-04-11 17:37:17,629 | INFO | Saving price recommendations to: artifacts/reports/price_recommendations.csv
+2026-04-11 17:37:19,236 | INFO | Saving optimization summary to: artifacts/reports/optimization_summary.json
+2026-04-11 17:37:19,237 | INFO | Final outputs saved successfully.
+2026-04-11 17:37:19,238 | INFO | ================================================================================
+2026-04-11 17:37:19,238 | INFO | PRICE RECOMMENDATION PIPELINE FINISHED
+2026-04-11 17:37:19,238 | INFO | ================================================================================
