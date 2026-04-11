@@ -328,3 +328,273 @@ ValueError: columns are missing: {'service fee', 'id', 'room_type_neighbourhood'
 2026-04-11 18:42:47,358 | INFO | Prediction Pipeline completed
 2026-04-11 18:42:47,360 | INFO | Prediction output shape: (98970, 4)
 2026-04-11 18:42:47,371 | INFO | ===== PREDICTION PIPELINE END =====
+2026-04-11 18:46:29,101 | INFO | ===== INFERENCE INPUT PIPELINE START =====
+2026-04-11 18:46:29,105 | INFO | Using input path: data/processed/feature_engineered_data.csv
+2026-04-11 18:46:29,105 | INFO | Starting Inference Input Pipeline
+2026-04-11 18:46:29,106 | INFO | Loading inference input data
+2026-04-11 18:46:29,633 | INFO | Input data shape: (98970, 29)
+2026-04-11 18:46:29,633 | INFO | Validating required columns
+2026-04-11 18:46:29,656 | INFO | All required columns are present
+2026-04-11 18:46:29,659 | INFO | Enforcing data types
+2026-04-11 18:46:29,687 | INFO | Data types enforced
+2026-04-11 18:46:29,688 | INFO | Handling missing values
+2026-04-11 18:46:29,711 | INFO | Missing values handled successfully
+2026-04-11 18:46:29,711 | INFO | Inference input pipeline completed successfully
+2026-04-11 18:46:29,712 | INFO | Processed data shape: (98970, 29)
+2026-04-11 18:46:29,712 | INFO | ===== INFERENCE INPUT PIPELINE END =====
+2026-04-11 18:46:29,712 | INFO | ===== PREDICTION PIPELINE START =====
+2026-04-11 18:46:29,713 | INFO | Starting Prediction Pipeline
+2026-04-11 18:46:29,713 | INFO | Loading preprocessor and model
+2026-04-11 18:46:31,517 | ERROR | Failed to load artifacts: Can't get attribute 'FeatureEngineering' on <module '__main__' from 'C:\\Users\\Dunith Munasinghe\\Desktop\\Pricing and Demand Optimization System\\Pricing-and-Demand-Optimization-System-\\main.py'>
+2026-04-11 18:46:31,517 | ERROR | Prediction pipeline failed: Can't get attribute 'FeatureEngineering' on <module '__main__' from 'C:\\Users\\Dunith Munasinghe\\Desktop\\Pricing and Demand Optimization System\\Pricing-and-Demand-Optimization-System-\\main.py'>
+2026-04-11 18:46:31,518 | ERROR | Pipeline failed
+Traceback (most recent call last):
+  File "C:\Users\Dunith Munasinghe\Desktop\Pricing and Demand Optimization System\Pricing-and-Demand-Optimization-System-\main.py", line 60, in main
+    prediction_df = prediction_pipeline.run(df_clean)
+  File "C:\Users\Dunith Munasinghe\Desktop\Pricing and Demand Optimization System\Pricing-and-Demand-Optimization-System-\src\dynamic_pricing\pipeline\prediction_pipeline.py", line 144, in run
+    raise e
+  File "C:\Users\Dunith Munasinghe\Desktop\Pricing and Demand Optimization System\Pricing-and-Demand-Optimization-System-\src\dynamic_pricing\pipeline\prediction_pipeline.py", line 130, in run
+    self.load_artifacts()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Dunith Munasinghe\Desktop\Pricing and Demand Optimization System\Pricing-and-Demand-Optimization-System-\src\dynamic_pricing\pipeline\prediction_pipeline.py", line 61, in load_artifacts
+    raise e
+  File "C:\Users\Dunith Munasinghe\Desktop\Pricing and Demand Optimization System\Pricing-and-Demand-Optimization-System-\src\dynamic_pricing\pipeline\prediction_pipeline.py", line 54, in load_artifacts
+    self.preprocessor = joblib.load(self.preprocessor_path)
+                        ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dunith Munasinghe\Desktop\Pricing and Demand Optimization System\Pricing-and-Demand-Optimization-System-\venv\Lib\site-packages\joblib\numpy_pickle.py", line 749, in load
+    obj = _unpickle(
+        fobj,
+    ...<2 lines>...
+        mmap_mode=validated_mmap_mode,
+    )
+  File "C:\Users\Dunith Munasinghe\Desktop\Pricing and Demand Optimization System\Pricing-and-Demand-Optimization-System-\venv\Lib\site-packages\joblib\numpy_pickle.py", line 626, in _unpickle
+    obj = unpickler.load()
+  File "C:\Python313\Lib\pickle.py", line 1256, in load
+    dispatch[key[0]](self)
+    ~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Python313\Lib\pickle.py", line 1581, in load_stack_global
+    self.append(self.find_class(module, name))
+                ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\pickle.py", line 1624, in find_class
+    return _getattribute(sys.modules[module], name)[0]
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\pickle.py", line 326, in _getattribute
+    raise AttributeError("Can't get attribute {!r} on {!r}"
+                         .format(name, top)) from None
+AttributeError: Can't get attribute 'FeatureEngineering' on <module '__main__' from 'C:\\Users\\Dunith Munasinghe\\Desktop\\Pricing and Demand Optimization System\\Pricing-and-Demand-Optimization-System-\\main.py'>
+2026-04-11 18:48:20,429 | INFO | ===== INFERENCE INPUT PIPELINE START =====
+2026-04-11 18:48:20,431 | INFO | Using input path: data/processed/feature_engineered_data.csv
+2026-04-11 18:48:20,431 | INFO | Starting Inference Input Pipeline
+2026-04-11 18:48:20,432 | INFO | Loading inference input data
+2026-04-11 18:48:20,923 | INFO | Input data shape: (98970, 29)
+2026-04-11 18:48:20,923 | INFO | Validating required columns
+2026-04-11 18:48:20,943 | INFO | All required columns are present
+2026-04-11 18:48:20,945 | INFO | Enforcing data types
+2026-04-11 18:48:20,980 | INFO | Data types enforced
+2026-04-11 18:48:20,980 | INFO | Handling missing values
+2026-04-11 18:48:21,000 | INFO | Missing values handled successfully
+2026-04-11 18:48:21,000 | INFO | Inference input pipeline completed successfully
+2026-04-11 18:48:21,000 | INFO | Processed data shape: (98970, 29)
+2026-04-11 18:48:21,000 | INFO | ===== INFERENCE INPUT PIPELINE END =====
+2026-04-11 18:48:21,000 | INFO | ===== PREDICTION PIPELINE START =====
+2026-04-11 18:48:21,000 | INFO | Starting Prediction Pipeline
+2026-04-11 18:48:21,001 | INFO | Loading preprocessor and model
+2026-04-11 18:48:21,049 | INFO | Artifacts loaded successfully
+2026-04-11 18:48:21,050 | INFO | Applying preprocessing pipeline
+2026-04-11 18:48:21,866 | INFO | Transformed input shape: (98970, 2677)
+2026-04-11 18:48:21,870 | INFO | Predicting demand
+2026-04-11 18:48:22,835 | INFO | Demand prediction completed
+2026-04-11 18:48:22,835 | INFO | Building prediction output
+2026-04-11 18:48:22,844 | INFO | Prediction output created
+2026-04-11 18:48:22,844 | INFO | Prediction Pipeline completed
+2026-04-11 18:48:22,846 | INFO | Prediction output shape: (98970, 4)
+2026-04-11 18:48:22,846 | INFO | ===== PREDICTION PIPELINE END =====
+2026-04-11 18:48:22,846 | INFO | ===== OPTIMIZATION PIPELINE START =====
+2026-04-11 18:48:22,846 | INFO | Starting Optimization Inference Pipeline
+2026-04-11 18:48:52,277 | INFO | Optimization completed
+2026-04-11 18:48:52,280 | INFO | Optimization output shape: (98970, 8)
+2026-04-11 18:48:52,315 | INFO | ===== OPTIMIZATION PIPELINE END =====
+2026-04-11 18:48:56,655 | INFO | ===== INFERENCE INPUT PIPELINE START =====
+2026-04-11 18:48:56,657 | INFO | Using input path: data/processed/feature_engineered_data.csv
+2026-04-11 18:48:56,657 | INFO | Starting Inference Input Pipeline
+2026-04-11 18:48:56,658 | INFO | Loading inference input data
+2026-04-11 18:48:57,120 | INFO | Input data shape: (98970, 29)
+2026-04-11 18:48:57,121 | INFO | Validating required columns
+2026-04-11 18:48:57,151 | INFO | All required columns are present
+2026-04-11 18:48:57,157 | INFO | Enforcing data types
+2026-04-11 18:48:57,204 | INFO | Data types enforced
+2026-04-11 18:48:57,204 | INFO | Handling missing values
+2026-04-11 18:48:57,223 | INFO | Missing values handled successfully
+2026-04-11 18:48:57,224 | INFO | Inference input pipeline completed successfully
+2026-04-11 18:48:57,224 | INFO | Processed data shape: (98970, 29)
+2026-04-11 18:48:57,224 | INFO | ===== INFERENCE INPUT PIPELINE END =====
+2026-04-11 18:48:57,225 | INFO | ===== PREDICTION PIPELINE START =====
+2026-04-11 18:48:57,225 | INFO | Starting Prediction Pipeline
+2026-04-11 18:48:57,225 | INFO | Loading preprocessor and model
+2026-04-11 18:48:57,274 | INFO | Artifacts loaded successfully
+2026-04-11 18:48:57,274 | INFO | Applying preprocessing pipeline
+2026-04-11 18:48:58,113 | INFO | Transformed input shape: (98970, 2677)
+2026-04-11 18:48:58,117 | INFO | Predicting demand
+2026-04-11 18:48:58,970 | INFO | Demand prediction completed
+2026-04-11 18:48:58,992 | INFO | Building prediction output
+2026-04-11 18:48:59,027 | INFO | Prediction output created
+2026-04-11 18:48:59,029 | INFO | Prediction Pipeline completed
+2026-04-11 18:48:59,031 | INFO | Prediction output shape: (98970, 4)
+2026-04-11 18:48:59,032 | INFO | ===== PREDICTION PIPELINE END =====
+2026-04-11 18:48:59,032 | INFO | ===== OPTIMIZATION PIPELINE START =====
+2026-04-11 18:48:59,032 | INFO | Starting Optimization Inference Pipeline
+2026-04-11 18:49:22,028 | INFO | Optimization completed
+2026-04-11 18:49:22,029 | INFO | Optimization output shape: (98970, 8)
+2026-04-11 18:49:22,057 | INFO | ===== OPTIMIZATION PIPELINE END =====
+2026-04-11 19:16:36,314 | INFO | ===== INFERENCE INPUT PIPELINE START =====
+2026-04-11 19:16:36,317 | INFO | Using input path: data/processed/feature_engineered_data.csv
+2026-04-11 19:16:36,317 | INFO | Starting Inference Input Pipeline
+2026-04-11 19:16:36,318 | INFO | Loading inference input data
+2026-04-11 19:16:36,704 | INFO | Input data shape: (98970, 29)
+2026-04-11 19:16:36,704 | INFO | Validating required columns
+2026-04-11 19:16:36,723 | INFO | All required columns are present
+2026-04-11 19:16:36,726 | INFO | Enforcing data types
+2026-04-11 19:16:36,770 | INFO | Data types enforced
+2026-04-11 19:16:36,771 | INFO | Handling missing values
+2026-04-11 19:16:36,800 | INFO | Missing values handled successfully
+2026-04-11 19:16:36,801 | INFO | Inference input pipeline completed successfully
+2026-04-11 19:16:36,811 | INFO | Processed data shape: (98970, 29)
+2026-04-11 19:16:36,811 | INFO | ===== INFERENCE INPUT PIPELINE END =====
+2026-04-11 19:16:36,811 | INFO | ===== PREDICTION PIPELINE START =====
+2026-04-11 19:16:36,812 | INFO | Starting Prediction Pipeline
+2026-04-11 19:16:36,812 | INFO | Loading preprocessor and model
+2026-04-11 19:16:38,250 | ERROR | Failed to load artifacts: Can't get attribute 'FeatureEngineering' on <module '__main__' from 'C:\\Users\\Dunith Munasinghe\\Desktop\\Pricing and Demand Optimization System\\Pricing-and-Demand-Optimization-System-\\main.py'>
+2026-04-11 19:16:38,250 | ERROR | Prediction pipeline failed: Can't get attribute 'FeatureEngineering' on <module '__main__' from 'C:\\Users\\Dunith Munasinghe\\Desktop\\Pricing and Demand Optimization System\\Pricing-and-Demand-Optimization-System-\\main.py'>
+2026-04-11 19:16:38,251 | ERROR | Pipeline failed
+Traceback (most recent call last):
+  File "C:\Users\Dunith Munasinghe\Desktop\Pricing and Demand Optimization System\Pricing-and-Demand-Optimization-System-\main.py", line 56, in main
+    prediction_df = prediction_pipeline.run(df_clean)
+  File "C:\Users\Dunith Munasinghe\Desktop\Pricing and Demand Optimization System\Pricing-and-Demand-Optimization-System-\src\dynamic_pricing\pipeline\prediction_pipeline.py", line 144, in run
+    raise e
+  File "C:\Users\Dunith Munasinghe\Desktop\Pricing and Demand Optimization System\Pricing-and-Demand-Optimization-System-\src\dynamic_pricing\pipeline\prediction_pipeline.py", line 130, in run
+    self.load_artifacts()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Dunith Munasinghe\Desktop\Pricing and Demand Optimization System\Pricing-and-Demand-Optimization-System-\src\dynamic_pricing\pipeline\prediction_pipeline.py", line 61, in load_artifacts
+    raise e
+  File "C:\Users\Dunith Munasinghe\Desktop\Pricing and Demand Optimization System\Pricing-and-Demand-Optimization-System-\src\dynamic_pricing\pipeline\prediction_pipeline.py", line 54, in load_artifacts
+    self.preprocessor = joblib.load(self.preprocessor_path)
+                        ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dunith Munasinghe\Desktop\Pricing and Demand Optimization System\Pricing-and-Demand-Optimization-System-\venv\Lib\site-packages\joblib\numpy_pickle.py", line 749, in load
+    obj = _unpickle(
+        fobj,
+    ...<2 lines>...
+        mmap_mode=validated_mmap_mode,
+    )
+  File "C:\Users\Dunith Munasinghe\Desktop\Pricing and Demand Optimization System\Pricing-and-Demand-Optimization-System-\venv\Lib\site-packages\joblib\numpy_pickle.py", line 626, in _unpickle
+    obj = unpickler.load()
+  File "C:\Python313\Lib\pickle.py", line 1256, in load
+    dispatch[key[0]](self)
+    ~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Python313\Lib\pickle.py", line 1581, in load_stack_global
+    self.append(self.find_class(module, name))
+                ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\pickle.py", line 1624, in find_class
+    return _getattribute(sys.modules[module], name)[0]
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\pickle.py", line 326, in _getattribute
+    raise AttributeError("Can't get attribute {!r} on {!r}"
+                         .format(name, top)) from None
+AttributeError: Can't get attribute 'FeatureEngineering' on <module '__main__' from 'C:\\Users\\Dunith Munasinghe\\Desktop\\Pricing and Demand Optimization System\\Pricing-and-Demand-Optimization-System-\\main.py'>
+2026-04-11 19:17:47,077 | INFO | ===== INFERENCE INPUT PIPELINE START =====
+2026-04-11 19:17:47,078 | INFO | Using input path: data/processed/feature_engineered_data.csv
+2026-04-11 19:17:47,078 | INFO | Starting Inference Input Pipeline
+2026-04-11 19:17:47,078 | INFO | Loading inference input data
+2026-04-11 19:17:47,664 | INFO | Input data shape: (98970, 29)
+2026-04-11 19:17:47,664 | INFO | Validating required columns
+2026-04-11 19:17:47,692 | INFO | All required columns are present
+2026-04-11 19:17:47,695 | INFO | Enforcing data types
+2026-04-11 19:17:47,737 | INFO | Data types enforced
+2026-04-11 19:17:47,737 | INFO | Handling missing values
+2026-04-11 19:17:47,771 | INFO | Missing values handled successfully
+2026-04-11 19:17:47,779 | INFO | Inference input pipeline completed successfully
+2026-04-11 19:17:47,779 | INFO | Processed data shape: (98970, 29)
+2026-04-11 19:17:47,779 | INFO | ===== INFERENCE INPUT PIPELINE END =====
+2026-04-11 19:17:47,779 | INFO | ===== PREDICTION PIPELINE START =====
+2026-04-11 19:17:47,779 | INFO | Starting Prediction Pipeline
+2026-04-11 19:17:47,779 | INFO | Loading preprocessor and model
+2026-04-11 19:17:47,849 | INFO | Artifacts loaded successfully
+2026-04-11 19:17:47,850 | INFO | Applying preprocessing pipeline
+2026-04-11 19:17:48,957 | INFO | Transformed input shape: (98970, 2677)
+2026-04-11 19:17:48,962 | INFO | Predicting demand
+2026-04-11 19:17:50,117 | INFO | Demand prediction completed
+2026-04-11 19:17:50,117 | INFO | Building prediction output
+2026-04-11 19:17:50,126 | INFO | Prediction output created
+2026-04-11 19:17:50,126 | INFO | Prediction Pipeline completed
+2026-04-11 19:17:50,129 | INFO | Prediction output shape: (98970, 4)
+2026-04-11 19:17:50,129 | INFO | ===== PREDICTION PIPELINE END =====
+2026-04-11 19:17:50,129 | INFO | ===== OPTIMIZATION PIPELINE START =====
+2026-04-11 19:17:50,129 | INFO | Starting Optimization Inference Pipeline
+2026-04-11 19:18:21,188 | INFO | Optimization completed
+2026-04-11 19:18:21,189 | INFO | Optimization output shape: (98970, 8)
+2026-04-11 19:18:21,189 | INFO | ===== OPTIMIZATION PIPELINE END =====
+2026-04-11 19:18:21,189 | INFO | ===== INFERENCE REPORTING PIPELINE START =====
+2026-04-11 19:18:21,190 | INFO | Starting Inference Reporting Pipeline
+2026-04-11 19:18:21,190 | INFO | Building reporting dataframe
+2026-04-11 19:18:24,569 | INFO | Reporting dataframe created successfully
+2026-04-11 19:18:24,569 | INFO | Saving CSV report to: artifacts\reports\inference\price_recommendations.csv
+2026-04-11 19:18:26,118 | INFO | CSV export completed
+2026-04-11 19:18:26,118 | INFO | Saving summary JSON to: artifacts\reports\inference\inference_summary.json
+2026-04-11 19:18:26,145 | INFO | Summary JSON export completed
+2026-04-11 19:18:26,145 | INFO | Inference Reporting Pipeline completed successfully
+2026-04-11 19:18:26,145 | INFO | Final report shape: (98970, 10)
+2026-04-11 19:18:26,214 | INFO | ===== INFERENCE REPORTING PIPELINE END =====
+2026-04-11 19:18:59,466 | INFO | ===== INFERENCE INPUT PIPELINE START =====
+2026-04-11 19:18:59,468 | INFO | Using input path: data/processed/feature_engineered_data.csv
+2026-04-11 19:18:59,469 | INFO | Starting Inference Input Pipeline
+2026-04-11 19:18:59,469 | INFO | Loading inference input data
+2026-04-11 19:18:59,891 | INFO | Input data shape: (98970, 29)
+2026-04-11 19:18:59,891 | INFO | Validating required columns
+2026-04-11 19:18:59,910 | INFO | All required columns are present
+2026-04-11 19:18:59,912 | INFO | Enforcing data types
+2026-04-11 19:18:59,959 | INFO | Data types enforced
+2026-04-11 19:18:59,959 | INFO | Handling missing values
+2026-04-11 19:18:59,982 | INFO | Missing values handled successfully
+2026-04-11 19:18:59,983 | INFO | Inference input pipeline completed successfully
+2026-04-11 19:18:59,983 | INFO | Processed data shape: (98970, 29)
+2026-04-11 19:18:59,983 | INFO | ===== INFERENCE INPUT PIPELINE END =====
+2026-04-11 19:18:59,984 | INFO | ===== PREDICTION PIPELINE START =====
+2026-04-11 19:18:59,984 | INFO | Starting Prediction Pipeline
+2026-04-11 19:18:59,984 | INFO | Loading preprocessor and model
+2026-04-11 19:19:00,036 | INFO | Artifacts loaded successfully
+2026-04-11 19:19:00,036 | INFO | Applying preprocessing pipeline
+2026-04-11 19:19:00,788 | INFO | Transformed input shape: (98970, 2677)
+2026-04-11 19:19:00,793 | INFO | Predicting demand
+2026-04-11 19:19:01,597 | INFO | Demand prediction completed
+2026-04-11 19:19:01,597 | INFO | Building prediction output
+2026-04-11 19:19:01,606 | INFO | Prediction output created
+2026-04-11 19:19:01,606 | INFO | Prediction Pipeline completed
+2026-04-11 19:19:01,608 | INFO | Prediction output shape: (98970, 4)
+2026-04-11 19:19:01,609 | INFO | ===== PREDICTION PIPELINE END =====
+2026-04-11 19:19:01,609 | INFO | ===== OPTIMIZATION PIPELINE START =====
+2026-04-11 19:19:01,609 | INFO | Starting Optimization Inference Pipeline
+2026-04-11 19:19:24,405 | INFO | Optimization completed
+2026-04-11 19:19:24,407 | INFO | Optimization output shape: (98970, 8)
+2026-04-11 19:19:24,407 | INFO | ===== OPTIMIZATION PIPELINE END =====
+2026-04-11 19:19:24,407 | INFO | ===== INFERENCE REPORTING PIPELINE START =====
+2026-04-11 19:19:24,408 | INFO | Starting Inference Reporting Pipeline
+2026-04-11 19:19:24,409 | INFO | Building reporting dataframe
+2026-04-11 19:19:26,756 | INFO | Reporting dataframe created successfully
+2026-04-11 19:19:26,757 | INFO | Saving CSV report to: artifacts\reports\inference\price_recommendations.csv
+2026-04-11 19:19:27,908 | INFO | CSV export completed
+2026-04-11 19:19:27,908 | INFO | Saving summary JSON to: artifacts\reports\inference\inference_summary.json
+2026-04-11 19:19:27,932 | INFO | Summary JSON export completed
+2026-04-11 19:19:27,933 | INFO | Inference Reporting Pipeline completed successfully
+2026-04-11 19:19:27,933 | INFO | Final report shape: (98970, 10)
+2026-04-11 19:19:27,953 | INFO | ===== INFERENCE REPORTING PIPELINE END =====
+2026-04-11 19:26:22,800 | INFO | Demand simulation completed. Shape: (1484550, 7)
+2026-04-11 19:30:35,997 | INFO | Optimization completed. Shape: (98458, 11)
+2026-04-11 19:30:35,998 | INFO | Building business-ready recommendation output.
+2026-04-11 19:30:38,586 | INFO | Recommendation output built successfully. Shape: (98458, 12)
+2026-04-11 19:30:38,587 | INFO | Building optimization summary.
+2026-04-11 19:30:38,624 | INFO | Summary built successfully.
+2026-04-11 19:30:38,625 | INFO | Saving price recommendations to: artifacts/reports/price_recommendations.csv
+2026-04-11 19:30:40,246 | INFO | Saving optimization summary to: artifacts/reports/optimization_summary.json
+2026-04-11 19:30:40,247 | INFO | Final outputs saved successfully.
+2026-04-11 19:30:40,248 | INFO | ================================================================================
+2026-04-11 19:30:40,248 | INFO | PRICE RECOMMENDATION PIPELINE FINISHED
+2026-04-11 19:30:40,248 | INFO | ================================================================================

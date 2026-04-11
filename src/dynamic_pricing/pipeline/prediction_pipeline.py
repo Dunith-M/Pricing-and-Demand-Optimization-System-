@@ -1,7 +1,13 @@
 import pandas as pd
 import joblib
+import sys
 from pathlib import Path
 
+from src.dynamic_pricing.pipeline.preprocessing_pipeline import (
+    FeatureEngineering,
+    prepare_categorical_data,
+    replace_inf_with_nan,
+)
 from src.dynamic_pricing.utils.logger import get_logger
 
 logger = get_logger(__name__)
@@ -50,6 +56,15 @@ class PredictionPipeline:
         """
         try:
             logger.info("Loading preprocessor and model")
+
+            # Older joblib artifacts may reference custom transformers/functions
+            # from the module that originally ran as __main__. Make them available
+            # on the active entrypoint module before unpickling.
+            main_module = sys.modules.get("__main__")
+            if main_module is not None:
+                setattr(main_module, "FeatureEngineering", FeatureEngineering)
+                setattr(main_module, "replace_inf_with_nan", replace_inf_with_nan)
+                setattr(main_module, "prepare_categorical_data", prepare_categorical_data)
 
             self.preprocessor = joblib.load(self.preprocessor_path)
             self.model = joblib.load(self.model_path)
