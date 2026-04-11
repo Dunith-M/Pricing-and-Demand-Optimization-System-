@@ -3,25 +3,18 @@ from __future__ import annotations
 import os
 import sys
 from dataclasses import dataclass
-from pathlib import Path
 from typing import Optional, List
 
 import joblib
 import numpy as np
 import pandas as pd
 
-from src.dynamic_pricing.pipeline.preprocessing_pipeline import (
-    FeatureEngineering,
-    prepare_categorical_data,
-    replace_inf_with_nan,
-)
-
 
 # ============================================================
 # OPTIONAL LOGGER IMPORT
 # ============================================================
 try:
-    from airbnb_price.logger import logger
+    from dynamic_pricing.logger import logger
 except Exception:
     import logging
 
@@ -85,35 +78,19 @@ class DemandSimulator:
 
     def __init__(self, config: DemandSimulationConfig):
         self.config = config
-        self.project_root = Path(__file__).resolve().parents[3]
         self.model = None
         self.preprocessor = None
-
-    def _resolve_existing_path(self, *candidate_paths: str) -> Path:
-        for candidate in candidate_paths:
-            candidate_path = Path(candidate)
-            if not candidate_path.is_absolute():
-                candidate_path = self.project_root / candidate_path
-
-            if candidate_path.exists():
-                return candidate_path
-
-        raise FileNotFoundError(
-            "None of the candidate paths exist: " + ", ".join(candidate_paths)
-        )
 
     # --------------------------------------------------------
     # LOAD ARTIFACTS
     # --------------------------------------------------------
     def load_artifacts(self) -> None:
         """Load trained model and fitted preprocessor."""
-        model_path = self._resolve_existing_path(self.config.model_path)
-        logger.info("Loading model from: %s", model_path)
-        self.model = joblib.load(model_path)
+        logger.info("Loading model from: %s", self.config.model_path)
+        self.model = joblib.load(self.config.model_path)
 
-        preprocessor_path = self._resolve_existing_path(self.config.preprocessor_path)
-        logger.info("Loading preprocessor from: %s", preprocessor_path)
-        self.preprocessor = joblib.load(preprocessor_path)
+        logger.info("Loading preprocessor from: %s", self.config.preprocessor_path)
+        self.preprocessor = joblib.load(self.config.preprocessor_path)
 
         logger.info("Artifacts loaded successfully.")
 
@@ -122,14 +99,8 @@ class DemandSimulator:
     # --------------------------------------------------------
     def load_input_data(self) -> pd.DataFrame:
         """Load listing data used for optimization simulation."""
-        input_data_path = self._resolve_existing_path(
-            self.config.input_data_path,
-            "data/processed/feature_engineered_data.csv",
-            "artifacts/data/splits/test.csv",
-            "artifacts/data/splits/train.csv",
-        )
-        logger.info("Loading input listing data from: %s", input_data_path)
-        df = pd.read_csv(input_data_path)
+        logger.info("Loading input listing data from: %s", self.config.input_data_path)
+        df = pd.read_csv(self.config.input_data_path)
 
         if self.config.price_column not in df.columns:
             raise ValueError(
