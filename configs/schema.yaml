@@ -1,0 +1,9 @@
+columns:
+  listing_id: categorical
+  price: numerical
+  service_fee: numerical
+  room_type: categorical
+  neighbourhood_group: categorical
+  availability_365: numerical
+  number_of_reviews: numerical
+  reviews_per_month: numerical

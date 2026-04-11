@@ -67,3 +67,264 @@
 2026-04-11 17:37:19,238 | INFO | ================================================================================
 2026-04-11 17:37:19,238 | INFO | PRICE RECOMMENDATION PIPELINE FINISHED
 2026-04-11 17:37:19,238 | INFO | ================================================================================
+2026-04-11 18:08:19,037 | INFO | ===== INFERENCE INPUT PIPELINE START =====
+2026-04-11 18:08:19,037 | INFO | System initialized
+2026-04-11 18:08:19,039 | INFO | Starting Inference Input Pipeline
+2026-04-11 18:08:19,039 | INFO | Loading inference input data
+2026-04-11 18:08:19,040 | ERROR | Error loading input data: [Errno 2] No such file or directory: 'data/input/new_listings.csv'
+2026-04-11 18:08:19,041 | ERROR | Inference input pipeline failed: [Errno 2] No such file or directory: 'data/input/new_listings.csv'
+2026-04-11 18:08:19,041 | ERROR | Pipeline failed
+Traceback (most recent call last):
+  File "C:\Users\Dunith Munasinghe\Desktop\Pricing and Demand Optimization System\Pricing-and-Demand-Optimization-System-\main.py", line 28, in main
+    df = input_pipeline.run(input_path)
+  File "C:\Users\Dunith Munasinghe\Desktop\Pricing and Demand Optimization System\Pricing-and-Demand-Optimization-System-\src\dynamic_pricing\pipeline\inference_input_pipeline.py", line 156, in run
+    raise e
+  File "C:\Users\Dunith Munasinghe\Desktop\Pricing and Demand Optimization System\Pricing-and-Demand-Optimization-System-\src\dynamic_pricing\pipeline\inference_input_pipeline.py", line 145, in run
+    df = self.load_input(input_data)
+  File "C:\Users\Dunith Munasinghe\Desktop\Pricing and Demand Optimization System\Pricing-and-Demand-Optimization-System-\src\dynamic_pricing\pipeline\inference_input_pipeline.py", line 46, in load_input
+    raise e
+  File "C:\Users\Dunith Munasinghe\Desktop\Pricing and Demand Optimization System\Pricing-and-Demand-Optimization-System-\src\dynamic_pricing\pipeline\inference_input_pipeline.py", line 35, in load_input
+    df = pd.read_csv(input_data)
+  File "C:\Users\Dunith Munasinghe\Desktop\Pricing and Demand Optimization System\Pricing-and-Demand-Optimization-System-\venv\Lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "C:\Users\Dunith Munasinghe\Desktop\Pricing and Demand Optimization System\Pricing-and-Demand-Optimization-System-\venv\Lib\site-packages\pandas\io\parsers\readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "C:\Users\Dunith Munasinghe\Desktop\Pricing and Demand Optimization System\Pricing-and-Demand-Optimization-System-\venv\Lib\site-packages\pandas\io\parsers\readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\Dunith Munasinghe\Desktop\Pricing and Demand Optimization System\Pricing-and-Demand-Optimization-System-\venv\Lib\site-packages\pandas\io\parsers\readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+                   ~~~~~~~~~~^
+        f,
+        ^^
+    ...<6 lines>...
+        storage_options=self.options.get("storage_options", None),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Dunith Munasinghe\Desktop\Pricing and Demand Optimization System\Pricing-and-Demand-Optimization-System-\venv\Lib\site-packages\pandas\io\common.py", line 873, in get_handle
+    handle = open(
+        handle,
+    ...<3 lines>...
+        newline="",
+    )
+FileNotFoundError: [Errno 2] No such file or directory: 'data/input/new_listings.csv'
+2026-04-11 18:11:39,357 | INFO | ===== INFERENCE INPUT PIPELINE START =====
+2026-04-11 18:11:39,357 | INFO | System initialized
+2026-04-11 18:11:39,359 | INFO | Using input path: data/processed/airbnb.csv
+2026-04-11 18:11:39,359 | INFO | Starting Inference Input Pipeline
+2026-04-11 18:11:39,359 | INFO | Loading inference input data
+2026-04-11 18:11:39,703 | INFO | Input data shape: (98970, 20)
+2026-04-11 18:11:39,703 | INFO | Validating required columns
+2026-04-11 18:11:39,708 | ERROR | Missing columns: ['listing_id']
+2026-04-11 18:11:39,709 | ERROR | Column validation failed: Missing required columns: ['listing_id']
+2026-04-11 18:11:39,709 | ERROR | Inference input pipeline failed: Missing required columns: ['listing_id']
+2026-04-11 18:11:39,709 | ERROR | Pipeline failed
+Traceback (most recent call last):
+  File "C:\Users\Dunith Munasinghe\Desktop\Pricing and Demand Optimization System\Pricing-and-Demand-Optimization-System-\main.py", line 47, in main
+    df = input_pipeline.run(input_path)
+  File "C:\Users\Dunith Munasinghe\Desktop\Pricing and Demand Optimization System\Pricing-and-Demand-Optimization-System-\src\dynamic_pricing\pipeline\inference_input_pipeline.py", line 163, in run
+    raise e
+  File "C:\Users\Dunith Munasinghe\Desktop\Pricing and Demand Optimization System\Pricing-and-Demand-Optimization-System-\src\dynamic_pricing\pipeline\inference_input_pipeline.py", line 153, in run
+    df = self.validate_columns(df)
+  File "C:\Users\Dunith Munasinghe\Desktop\Pricing and Demand Optimization System\Pricing-and-Demand-Optimization-System-\src\dynamic_pricing\pipeline\inference_input_pipeline.py", line 79, in validate_columns
+    raise e
+  File "C:\Users\Dunith Munasinghe\Desktop\Pricing and Demand Optimization System\Pricing-and-Demand-Optimization-System-\src\dynamic_pricing\pipeline\inference_input_pipeline.py", line 72, in validate_columns
+    raise ValueError(f"Missing required columns: {missing_cols}")
+ValueError: Missing required columns: ['listing_id']
+2026-04-11 18:11:56,387 | INFO | ===== INFERENCE INPUT PIPELINE START =====
+2026-04-11 18:11:56,388 | INFO | System initialized
+2026-04-11 18:11:56,390 | INFO | Using input path: data/processed/airbnb.csv
+2026-04-11 18:11:56,390 | INFO | Starting Inference Input Pipeline
+2026-04-11 18:11:56,390 | INFO | Loading inference input data
+2026-04-11 18:11:56,814 | INFO | Input data shape: (98970, 20)
+2026-04-11 18:11:56,814 | INFO | Validating required columns
+2026-04-11 18:11:56,830 | INFO | All required columns are present
+2026-04-11 18:11:56,833 | INFO | Enforcing data types
+2026-04-11 18:11:56,890 | INFO | Data types enforced
+2026-04-11 18:11:56,890 | INFO | Handling missing values
+2026-04-11 18:11:56,929 | INFO | Missing values handled successfully
+2026-04-11 18:11:56,930 | INFO | Inference input pipeline completed successfully
+2026-04-11 18:11:56,930 | INFO | Processed data shape: (98970, 20)
+2026-04-11 18:12:36,087 | INFO | ===== INFERENCE INPUT PIPELINE START =====
+2026-04-11 18:12:36,087 | INFO | System initialized
+2026-04-11 18:12:36,089 | INFO | Using input path: data/processed/airbnb.csv
+2026-04-11 18:12:36,090 | INFO | Starting Inference Input Pipeline
+2026-04-11 18:12:36,090 | INFO | Loading inference input data
+2026-04-11 18:12:36,434 | INFO | Input data shape: (98970, 20)
+2026-04-11 18:12:36,434 | INFO | Validating required columns
+2026-04-11 18:12:36,448 | INFO | All required columns are present
+2026-04-11 18:12:36,451 | INFO | Enforcing data types
+2026-04-11 18:12:36,491 | INFO | Data types enforced
+2026-04-11 18:12:36,491 | INFO | Handling missing values
+2026-04-11 18:12:36,566 | INFO | Missing values handled successfully
+2026-04-11 18:12:36,567 | INFO | Inference input pipeline completed successfully
+2026-04-11 18:12:36,567 | INFO | Processed data shape: (98970, 20)
+2026-04-11 18:12:36,628 | INFO | ===== INFERENCE INPUT PIPELINE END =====
+2026-04-11 18:14:58,083 | INFO | ===== INFERENCE INPUT PIPELINE START =====
+2026-04-11 18:14:58,084 | INFO | System initialized
+2026-04-11 18:14:58,085 | INFO | Using input path: data/processed/airbnb.csv
+2026-04-11 18:14:58,085 | INFO | Starting Inference Input Pipeline
+2026-04-11 18:14:58,086 | INFO | Loading inference input data
+2026-04-11 18:14:58,356 | INFO | Input data shape: (98970, 20)
+2026-04-11 18:14:58,356 | INFO | Validating required columns
+2026-04-11 18:14:58,370 | INFO | All required columns are present
+2026-04-11 18:14:58,372 | INFO | Enforcing data types
+2026-04-11 18:14:58,403 | INFO | Data types enforced
+2026-04-11 18:14:58,404 | INFO | Handling missing values
+2026-04-11 18:14:58,428 | INFO | Missing values handled successfully
+2026-04-11 18:14:58,429 | INFO | Inference input pipeline completed successfully
+2026-04-11 18:14:58,429 | INFO | Processed data shape: (98970, 20)
+2026-04-11 18:14:58,448 | INFO | ===== INFERENCE INPUT PIPELINE END =====
+2026-04-11 18:39:36,654 | INFO | ===== INFERENCE INPUT PIPELINE START =====
+2026-04-11 18:39:36,655 | INFO | System initialized
+2026-04-11 18:39:36,657 | INFO | Using input path: data/processed/airbnb.csv
+2026-04-11 18:39:36,657 | INFO | Starting Inference Input Pipeline
+2026-04-11 18:39:36,657 | INFO | Loading inference input data
+2026-04-11 18:39:36,940 | INFO | Input data shape: (98970, 20)
+2026-04-11 18:39:36,941 | INFO | Validating required columns
+2026-04-11 18:39:36,976 | INFO | All required columns are present
+2026-04-11 18:39:37,047 | INFO | Enforcing data types
+2026-04-11 18:39:37,087 | INFO | Data types enforced
+2026-04-11 18:39:37,087 | INFO | Handling missing values
+2026-04-11 18:39:37,108 | INFO | Missing values handled successfully
+2026-04-11 18:39:37,109 | INFO | Inference input pipeline completed successfully
+2026-04-11 18:39:37,109 | INFO | Processed data shape: (98970, 20)
+2026-04-11 18:39:37,109 | INFO | ===== INFERENCE INPUT PIPELINE END =====
+2026-04-11 18:39:37,109 | INFO | ===== PREDICTION PIPELINE START =====
+2026-04-11 18:39:37,110 | INFO | Starting Prediction Pipeline
+2026-04-11 18:39:37,110 | INFO | Loading preprocessor and model
+2026-04-11 18:39:39,904 | ERROR | Failed to load artifacts: Can't get attribute 'FeatureEngineering' on <module '__main__' from 'C:\\Users\\Dunith Munasinghe\\Desktop\\Pricing and Demand Optimization System\\Pricing-and-Demand-Optimization-System-\\main.py'>
+2026-04-11 18:39:39,904 | ERROR | Prediction pipeline failed: Can't get attribute 'FeatureEngineering' on <module '__main__' from 'C:\\Users\\Dunith Munasinghe\\Desktop\\Pricing and Demand Optimization System\\Pricing-and-Demand-Optimization-System-\\main.py'>
+2026-04-11 18:39:39,904 | ERROR | Pipeline failed
+Traceback (most recent call last):
+  File "C:\Users\Dunith Munasinghe\Desktop\Pricing and Demand Optimization System\Pricing-and-Demand-Optimization-System-\main.py", line 66, in main
+    prediction_df = prediction_pipeline.run(df_clean)
+  File "C:\Users\Dunith Munasinghe\Desktop\Pricing and Demand Optimization System\Pricing-and-Demand-Optimization-System-\src\dynamic_pricing\pipeline\prediction_pipeline.py", line 121, in run
+    raise e
+  File "C:\Users\Dunith Munasinghe\Desktop\Pricing and Demand Optimization System\Pricing-and-Demand-Optimization-System-\src\dynamic_pricing\pipeline\prediction_pipeline.py", line 107, in run
+    self.load_artifacts()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Dunith Munasinghe\Desktop\Pricing and Demand Optimization System\Pricing-and-Demand-Optimization-System-\src\dynamic_pricing\pipeline\prediction_pipeline.py", line 39, in load_artifacts
+    raise e
+  File "C:\Users\Dunith Munasinghe\Desktop\Pricing and Demand Optimization System\Pricing-and-Demand-Optimization-System-\src\dynamic_pricing\pipeline\prediction_pipeline.py", line 32, in load_artifacts
+    self.preprocessor = joblib.load(self.preprocessor_path)
+                        ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dunith Munasinghe\Desktop\Pricing and Demand Optimization System\Pricing-and-Demand-Optimization-System-\venv\Lib\site-packages\joblib\numpy_pickle.py", line 749, in load
+    obj = _unpickle(
+        fobj,
+    ...<2 lines>...
+        mmap_mode=validated_mmap_mode,
+    )
+  File "C:\Users\Dunith Munasinghe\Desktop\Pricing and Demand Optimization System\Pricing-and-Demand-Optimization-System-\venv\Lib\site-packages\joblib\numpy_pickle.py", line 626, in _unpickle
+    obj = unpickler.load()
+  File "C:\Python313\Lib\pickle.py", line 1256, in load
+    dispatch[key[0]](self)
+    ~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Python313\Lib\pickle.py", line 1581, in load_stack_global
+    self.append(self.find_class(module, name))
+                ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\pickle.py", line 1624, in find_class
+    return _getattribute(sys.modules[module], name)[0]
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\pickle.py", line 326, in _getattribute
+    raise AttributeError("Can't get attribute {!r} on {!r}"
+                         .format(name, top)) from None
+AttributeError: Can't get attribute 'FeatureEngineering' on <module '__main__' from 'C:\\Users\\Dunith Munasinghe\\Desktop\\Pricing and Demand Optimization System\\Pricing-and-Demand-Optimization-System-\\main.py'>
+2026-04-11 18:41:15,284 | INFO | ===== INFERENCE INPUT PIPELINE START =====
+2026-04-11 18:41:15,284 | INFO | System initialized
+2026-04-11 18:41:15,286 | INFO | Using input path: data/processed/airbnb.csv
+2026-04-11 18:41:15,286 | INFO | Starting Inference Input Pipeline
+2026-04-11 18:41:15,286 | INFO | Loading inference input data
+2026-04-11 18:41:15,857 | INFO | Input data shape: (98970, 20)
+2026-04-11 18:41:15,857 | INFO | Validating required columns
+2026-04-11 18:41:15,894 | INFO | All required columns are present
+2026-04-11 18:41:15,901 | INFO | Enforcing data types
+2026-04-11 18:41:16,014 | INFO | Data types enforced
+2026-04-11 18:41:16,014 | INFO | Handling missing values
+2026-04-11 18:41:16,075 | INFO | Missing values handled successfully
+2026-04-11 18:41:16,075 | INFO | Inference input pipeline completed successfully
+2026-04-11 18:41:16,076 | INFO | Processed data shape: (98970, 20)
+2026-04-11 18:41:16,076 | INFO | ===== INFERENCE INPUT PIPELINE END =====
+2026-04-11 18:41:16,076 | INFO | ===== PREDICTION PIPELINE START =====
+2026-04-11 18:41:16,076 | INFO | Starting Prediction Pipeline
+2026-04-11 18:41:16,077 | INFO | Loading preprocessor and model
+2026-04-11 18:41:16,252 | INFO | Artifacts loaded successfully
+2026-04-11 18:41:16,253 | INFO | Applying preprocessing pipeline
+2026-04-11 18:41:16,323 | ERROR | Preprocessing failed: columns are missing: {'service fee', 'id', 'room_type_neighbourhood', 'calculated host listings count', 'host id', 'minimum nights', 'availability_bucket', 'availability_min_nights', 'last review', 'room type', 'price_per_minimum_night', 'neighbourhood_group_demand_avg', 'price_review_interaction', 'neighbourhood group', 'number of reviews', 'review_intensity', 'review rate number'}
+2026-04-11 18:41:16,324 | ERROR | Prediction pipeline failed: columns are missing: {'service fee', 'id', 'room_type_neighbourhood', 'calculated host listings count', 'host id', 'minimum nights', 'availability_bucket', 'availability_min_nights', 'last review', 'room type', 'price_per_minimum_night', 'neighbourhood_group_demand_avg', 'price_review_interaction', 'neighbourhood group', 'number of reviews', 'review_intensity', 'review rate number'}
+2026-04-11 18:41:16,324 | ERROR | Pipeline failed
+Traceback (most recent call last):
+  File "C:\Users\Dunith Munasinghe\Desktop\Pricing and Demand Optimization System\Pricing-and-Demand-Optimization-System-\main.py", line 59, in main
+    prediction_df = prediction_pipeline.run(df_clean)
+  File "C:\Users\Dunith Munasinghe\Desktop\Pricing and Demand Optimization System\Pricing-and-Demand-Optimization-System-\src\dynamic_pricing\pipeline\prediction_pipeline.py", line 121, in run
+    raise e
+  File "C:\Users\Dunith Munasinghe\Desktop\Pricing and Demand Optimization System\Pricing-and-Demand-Optimization-System-\src\dynamic_pricing\pipeline\prediction_pipeline.py", line 109, in run
+    X_transformed = self.transform_input(df)
+  File "C:\Users\Dunith Munasinghe\Desktop\Pricing and Demand Optimization System\Pricing-and-Demand-Optimization-System-\src\dynamic_pricing\pipeline\prediction_pipeline.py", line 56, in transform_input
+    raise e
+  File "C:\Users\Dunith Munasinghe\Desktop\Pricing and Demand Optimization System\Pricing-and-Demand-Optimization-System-\src\dynamic_pricing\pipeline\prediction_pipeline.py", line 48, in transform_input
+    X_transformed = self.preprocessor.transform(df)
+  File "C:\Users\Dunith Munasinghe\Desktop\Pricing and Demand Optimization System\Pricing-and-Demand-Optimization-System-\venv\Lib\site-packages\sklearn\pipeline.py", line 1043, in transform
+    Xt = transform.transform(Xt, **routed_params[name].transform)
+  File "C:\Users\Dunith Munasinghe\Desktop\Pricing and Demand Optimization System\Pricing-and-Demand-Optimization-System-\venv\Lib\site-packages\sklearn\utils\_set_output.py", line 316, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+  File "C:\Users\Dunith Munasinghe\Desktop\Pricing and Demand Optimization System\Pricing-and-Demand-Optimization-System-\venv\Lib\site-packages\sklearn\compose\_column_transformer.py", line 1088, in transform
+    raise ValueError(f"columns are missing: {diff}")
+ValueError: columns are missing: {'service fee', 'id', 'room_type_neighbourhood', 'calculated host listings count', 'host id', 'minimum nights', 'availability_bucket', 'availability_min_nights', 'last review', 'room type', 'price_per_minimum_night', 'neighbourhood_group_demand_avg', 'price_review_interaction', 'neighbourhood group', 'number of reviews', 'review_intensity', 'review rate number'}
+2026-04-11 18:42:10,867 | INFO | ===== INFERENCE INPUT PIPELINE START =====
+2026-04-11 18:42:10,867 | INFO | System initialized
+2026-04-11 18:42:10,875 | INFO | Using input path: data/processed/feature_engineered_data.csv
+2026-04-11 18:42:10,875 | INFO | Starting Inference Input Pipeline
+2026-04-11 18:42:10,876 | INFO | Loading inference input data
+2026-04-11 18:42:11,365 | INFO | Input data shape: (98970, 29)
+2026-04-11 18:42:11,365 | INFO | Validating required columns
+2026-04-11 18:42:11,383 | INFO | All required columns are present
+2026-04-11 18:42:11,387 | INFO | Enforcing data types
+2026-04-11 18:42:11,453 | INFO | Data types enforced
+2026-04-11 18:42:11,454 | INFO | Handling missing values
+2026-04-11 18:42:11,494 | INFO | Missing values handled successfully
+2026-04-11 18:42:11,494 | INFO | Inference input pipeline completed successfully
+2026-04-11 18:42:11,494 | INFO | Processed data shape: (98970, 29)
+2026-04-11 18:42:11,494 | INFO | ===== INFERENCE INPUT PIPELINE END =====
+2026-04-11 18:42:11,494 | INFO | ===== PREDICTION PIPELINE START =====
+2026-04-11 18:42:11,494 | INFO | Starting Prediction Pipeline
+2026-04-11 18:42:11,495 | INFO | Loading preprocessor and model
+2026-04-11 18:42:11,548 | INFO | Artifacts loaded successfully
+2026-04-11 18:42:11,548 | INFO | Applying preprocessing pipeline
+2026-04-11 18:42:12,560 | INFO | Transformed input shape: (98970, 2677)
+2026-04-11 18:42:12,564 | INFO | Predicting demand
+2026-04-11 18:42:13,512 | INFO | Demand prediction completed
+2026-04-11 18:42:13,512 | INFO | Building prediction output
+2026-04-11 18:42:13,519 | INFO | Prediction output created
+2026-04-11 18:42:13,519 | INFO | Prediction Pipeline completed
+2026-04-11 18:42:13,521 | INFO | Prediction output shape: (98970, 4)
+2026-04-11 18:42:13,529 | INFO | ===== PREDICTION PIPELINE END =====
+2026-04-11 18:42:45,303 | INFO | ===== INFERENCE INPUT PIPELINE START =====
+2026-04-11 18:42:45,304 | INFO | System initialized
+2026-04-11 18:42:45,306 | INFO | Using input path: data/processed/feature_engineered_data.csv
+2026-04-11 18:42:45,306 | INFO | Starting Inference Input Pipeline
+2026-04-11 18:42:45,306 | INFO | Loading inference input data
+2026-04-11 18:42:45,836 | INFO | Input data shape: (98970, 29)
+2026-04-11 18:42:45,836 | INFO | Validating required columns
+2026-04-11 18:42:45,854 | INFO | All required columns are present
+2026-04-11 18:42:45,857 | INFO | Enforcing data types
+2026-04-11 18:42:45,883 | INFO | Data types enforced
+2026-04-11 18:42:45,883 | INFO | Handling missing values
+2026-04-11 18:42:45,905 | INFO | Missing values handled successfully
+2026-04-11 18:42:45,905 | INFO | Inference input pipeline completed successfully
+2026-04-11 18:42:45,906 | INFO | Processed data shape: (98970, 29)
+2026-04-11 18:42:45,906 | INFO | ===== INFERENCE INPUT PIPELINE END =====
+2026-04-11 18:42:45,906 | INFO | ===== PREDICTION PIPELINE START =====
+2026-04-11 18:42:45,906 | INFO | Starting Prediction Pipeline
+2026-04-11 18:42:45,906 | INFO | Loading preprocessor and model
+2026-04-11 18:42:45,961 | INFO | Artifacts loaded successfully
+2026-04-11 18:42:45,962 | INFO | Applying preprocessing pipeline
+2026-04-11 18:42:46,655 | INFO | Transformed input shape: (98970, 2677)
+2026-04-11 18:42:46,660 | INFO | Predicting demand
+2026-04-11 18:42:47,350 | INFO | Demand prediction completed
+2026-04-11 18:42:47,350 | INFO | Building prediction output
+2026-04-11 18:42:47,357 | INFO | Prediction output created
+2026-04-11 18:42:47,358 | INFO | Prediction Pipeline completed
+2026-04-11 18:42:47,360 | INFO | Prediction output shape: (98970, 4)
+2026-04-11 18:42:47,371 | INFO | ===== PREDICTION PIPELINE END =====
